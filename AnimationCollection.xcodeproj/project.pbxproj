@@ -16,6 +16,8 @@
 		237271841DDC617500BF521E /* AnimationCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 237271831DDC617500BF521E /* AnimationCollectionTests.m */; };
 		2372718F1DDC617500BF521E /* AnimationCollectionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2372718E1DDC617500BF521E /* AnimationCollectionUITests.m */; };
 		2372719F1DDC61D600BF521E /* CircleLoadingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2372719E1DDC61D600BF521E /* CircleLoadingAnimation.m */; };
+		23AA676A1DFF91BF0035B604 /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23AA67691DFF91BF0035B604 /* WaveView.m */; };
+		23DAF1BD1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DAF1BC1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		2372719D1DDC61D600BF521E /* CircleLoadingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleLoadingAnimation.h; sourceTree = "<group>"; };
 		2372719E1DDC61D600BF521E /* CircleLoadingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleLoadingAnimation.m; sourceTree = "<group>"; };
 		237271A11DDC626800BF521E /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		23AA67681DFF91BF0035B604 /* WaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveView.h; sourceTree = "<group>"; };
+		23AA67691DFF91BF0035B604 /* WaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveView.m; sourceTree = "<group>"; };
+		23DAF1BB1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterRippleLoadingAnimation.h; sourceTree = "<group>"; };
+		23DAF1BC1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterRippleLoadingAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 			children = (
 				237271A01DDC623500BF521E /* other */,
 				2372719C1DDC619300BF521E /* CircleLodingAnimation */,
+				23DAF1BA1DFE7557000BBF47 /* WaterRippleLoadingAnimation */,
 				2372716F1DDC617500BF521E /* ViewController.h */,
 				237271701DDC617500BF521E /* ViewController.m */,
 				237271691DDC617500BF521E /* Supporting Files */,
@@ -161,6 +168,17 @@
 				2372717A1DDC617500BF521E /* Info.plist */,
 			);
 			name = other;
+			sourceTree = "<group>";
+		};
+		23DAF1BA1DFE7557000BBF47 /* WaterRippleLoadingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				23DAF1BB1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.h */,
+				23DAF1BC1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m */,
+				23AA67681DFF91BF0035B604 /* WaveView.h */,
+				23AA67691DFF91BF0035B604 /* WaveView.m */,
+			);
+			name = WaterRippleLoadingAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +318,8 @@
 				2372716E1DDC617500BF521E /* AppDelegate.m in Sources */,
 				2372716B1DDC617500BF521E /* main.m in Sources */,
 				2372719F1DDC61D600BF521E /* CircleLoadingAnimation.m in Sources */,
+				23DAF1BD1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m in Sources */,
+				23AA676A1DFF91BF0035B604 /* WaveView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = /Users/mahaozhe/Desktop/gitCode/AnimationCollection/AnimationCollection/Header.h;
 				INFOPLIST_FILE = AnimationCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.junanxin.AnimationCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -462,6 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = /Users/mahaozhe/Desktop/gitCode/AnimationCollection/AnimationCollection/Header.h;
 				INFOPLIST_FILE = AnimationCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.junanxin.AnimationCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -533,6 +555,7 @@
 				237271951DDC617500BF521E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		237271961DDC617500BF521E /* Build configuration list for PBXNativeTarget "AnimationCollectionTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +564,7 @@
 				237271981DDC617500BF521E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		237271991DDC617500BF521E /* Build configuration list for PBXNativeTarget "AnimationCollectionUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +573,7 @@
 				2372719B1DDC617500BF521E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CircleLoadingAnimation.h"
+#import "WaterRippleLoadingAnimation.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -34,7 +35,7 @@
 {
     if (_itemArrays == nil) {
         _itemArrays = [[NSArray alloc] init];
-        _itemArrays = @[@"加载动画",@"未知",@"未知",@"未知",@"未知",@"未知",@"未知",@"未知",@"未知",@"未知"];
+        _itemArrays = @[@"加载动画",@"水纹动画",@"未知",@"未知",@"未知",@"未知",@"未知",@"未知",@"未知",@"未知"];
     }
     return _itemArrays;
 }
@@ -66,6 +67,11 @@
     if (indexPath.row == 0) {
         CircleLoadingAnimation *lodingVC = [[CircleLoadingAnimation alloc] init];
         [self.navigationController pushViewController:lodingVC animated:YES];
+    }
+    else if (indexPath.row == 1)
+    {
+        WaterRippleLoadingAnimation *waterVC = [[WaterRippleLoadingAnimation alloc] init];
+        [self.navigationController pushViewController:waterVC animated:YES];
     }
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];

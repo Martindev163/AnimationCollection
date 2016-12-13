@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "05AF7A83AC006E9B3BDF79CBD24AEB6036908844",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AF47D4A3F34FEF4628F2EF7AEC8326E949F17015" : 9223372036854775807,
+    "05AF7A83AC006E9B3BDF79CBD24AEB6036908844" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B2D64D66-D413-4B30-85DB-39444D852092",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AF47D4A3F34FEF4628F2EF7AEC8326E949F17015" : "",
+    "05AF7A83AC006E9B3BDF79CBD24AEB6036908844" : "AnimationCollection\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AnimationCollection",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AnimationCollection.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/haozheMa\/AnimationCollection.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "05AF7A83AC006E9B3BDF79CBD24AEB6036908844"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/haozheMa\/3DTouch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AF47D4A3F34FEF4628F2EF7AEC8326E949F17015"
+    }
+  ]
+}

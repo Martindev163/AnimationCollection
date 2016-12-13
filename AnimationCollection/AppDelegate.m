@@ -19,11 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    
     ViewController *rootVC = [[ViewController alloc] init];
-    
     UINavigationController *rootNavVC = [[UINavigationController alloc] initWithRootViewController:rootVC];
-    
     self.window.rootViewController = rootNavVC;
     [self.window makeKeyAndVisible];
     
@@ -51,6 +48,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSNotification * notice = [NSNotification notificationWithName:@"123" object:nil userInfo:@{@"1":@"123"}];
+    //发送消息
+    [[NSNotificationCenter defaultCenter]postNotification:notice];
 }
 
 
