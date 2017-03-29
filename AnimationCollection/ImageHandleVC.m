@@ -8,6 +8,7 @@
 
 #import "ImageHandleVC.h"
 #import "UIImage+ImageEffects.h"
+#import "BlurDownloadView.h"
 
 @interface ImageHandleVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -23,9 +24,10 @@
     
     self.title = @"动画收集";
     
-    _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - 64)];
+    _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kDeviceWidth, kDeviceHeight - 64)];
     _tableview.delegate = self;
     _tableview.dataSource = self;
+    [_tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellId"];
     [self.view addSubview:_tableview];
 }
 
@@ -36,26 +38,31 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 6;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellID = @"cellId";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
-    UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 201, 256)];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    
     if (indexPath.row == 0) {
+        UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 201, 256)];
 //        imageView.image = [self vagueWithCoreImage];//卡顿
 //        [cell.contentView addSubview:imageView];
     }else if (indexPath.row == 1){
+        UIImageView *imageView =[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 201, 256)];
         imageView.image = [self vagueWithImageEffects];//流畅一点
         [cell.contentView addSubview:imageView];
     }else if (indexPath.row == 2){
         [cell.contentView addSubview:[self vagueWithUIVisualEffectView]];
+    }else if (indexPath.row == 3){
+        [cell.contentView addSubview:[self loadBlurImageView]];
+    }else if (indexPath.row == 4){
+        [cell.contentView addSubview:[self maskWithCAGradientLayerView]];
+    }else if (indexPath.row == 5){
+        [cell.contentView addSubview:[self changeViewsWithMaskView]];
     }
     
     
@@ -66,7 +73,13 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 256;
+    if (indexPath.row == 3) {
+        return 512;
+    }
+    else
+    {
+        return 256;
+    }
 }
 
 
@@ -133,7 +146,7 @@
     [baseScrollView addSubview:imageView];
     [baseView addSubview:baseScrollView];
     
-    //添加模糊效果
+    /*添加模糊效果*/
     
     //创建模糊View
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
@@ -163,6 +176,120 @@
     [subEffectView.contentView addSubview:label];
     
     return baseView;
+}
+#pragma mark - 加载模糊图片
+-(BlurDownloadView *)loadBlurImageView
+{   
+    BlurDownloadView *loadView = [[BlurDownloadView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 512)];
+    loadView.pictureUrlStr = @"http://pic33.nipic.com/20131007/2309134_123021284000_2.jpg";
+    loadView.contentMode = UIViewContentModeScaleAspectFill;
+    [loadView startProgress];
+    return loadView;
+}
+
+#pragma mark - CAGradientLayer创建模糊效果
+-(UIView *)maskWithCAGradientLayerView
+{
+    UIView *baseView       = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                      0,      kDeviceWidth,
+                                                                      256)];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20,
+                                                                           20,
+                                                                           200,
+                                                                           200)];
+    imageView.image        = [UIImage imageNamed:@"myImage"];
+    
+    [baseView addSubview:imageView];
+    
+    //创建CAGradientLayer
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame            = imageView.bounds;
+    gradientLayer.colors           = @[(__bridge id)[UIColor clearColor].CGColor,
+                                       (__bridge id)[UIColor blackColor].CGColor,
+                                       (__bridge id)[UIColor clearColor].CGColor];
+    
+    gradientLayer.locations        = @[@(0.25),@(0.5),@(0.75)];
+    gradientLayer.startPoint       = CGPointMake(0, 0);
+    gradientLayer.endPoint         = CGPointMake(1, 0);
+    
+    //容器View 用于加载创建出来的CAGradientLayer
+    UIView *containerView = [[UIView alloc] initWithFrame:imageView.bounds];
+    [containerView.layer addSublayer:gradientLayer];
+    
+    //设定maskView
+    imageView.maskView    = containerView;
+    
+    CGRect frame          = containerView.frame;
+    frame.origin.x       -= 200;
+    
+//    重新复制
+    containerView.frame   = frame;
+    
+//    给maskView 添加动画
+    [UIView animateWithDuration:3.f animations:^{
+        CGRect frame        = containerView.frame;
+        frame.origin.x     += 400;
+        
+        //重新赋值
+        containerView.frame = frame;
+    }];
+    
+    return baseView;
+}
+
+#pragma mark - 利用maskView 实现view的切换效果
+-(UIView *)changeViewsWithMaskView
+{
+    UIView *baseViw              = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                               0,
+                                                               kDeviceWidth,
+                                                               256)];
+    
+    UIImageView *firstImageView  = [[UIImageView alloc] initWithFrame:CGRectMake(20,
+                                                                                20,
+                                                                                200,
+                                                                                200)];
+    firstImageView.image         = [UIImage imageNamed:@"myImage"];
+    [baseViw addSubview:firstImageView];
+    
+    UIImageView *secondImageView = [[UIImageView alloc] initWithFrame:firstImageView.frame];
+    secondImageView.image        = [UIImage imageNamed:@"twoImage"];
+    [baseViw addSubview:secondImageView];
+    
+    //创建CAGradientLayer
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame            = CGRectMake(0, 0, 200, 200);
+    gradientLayer.colors           = @[(__bridge id)[UIColor blackColor].CGColor,
+                                       (__bridge id)[UIColor blackColor].CGColor,
+                                       (__bridge id)[UIColor clearColor].CGColor];
+    gradientLayer.locations        = @[@(0.25f),@(0.5),@(.75f)];
+    gradientLayer.startPoint       = CGPointMake(0, 0);
+    gradientLayer.endPoint         = CGPointMake(1, 1);
+    
+    //添加CAGradientLayer的容器
+    UIView *maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    [maskView.layer addSublayer:gradientLayer];
+    
+    //设定imgaeview的maskView
+    secondImageView.maskView = maskView;
+    
+    //设定动画
+    CGRect tempFrame = maskView.frame;
+    tempFrame.origin.x -= 200;
+    
+    maskView.frame = tempFrame;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:3.f animations:^{
+            CGRect tempFrame    = maskView.frame;
+            tempFrame.origin.x += 300;
+            
+            maskView.frame = tempFrame;
+        }];
+    });
+    
+    return baseViw;
 }
 
 @end

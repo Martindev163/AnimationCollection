@@ -11,6 +11,9 @@
 #import "WaterRippleLoadingAnimation.h"
 #import "LearnAnimationVC.h"
 #import "ImageHandleVC.h"
+#import "POPViewController.h"
+#import "POPSpringAnimationVC.h"
+#import "EasingAnimationVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -27,6 +30,8 @@
     
     self.title = @"动画收集";
     
+    self.navigationController.navigationBar.translucent = NO;
+    
     _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - 64)];
     _tableview.delegate = self;
     _tableview.dataSource = self;
@@ -37,7 +42,7 @@
 {
     if (_itemArrays == nil) {
         _itemArrays = [[NSArray alloc] init];
-        _itemArrays = @[@"加载动画",@"水纹动画",@"学习动画",@"图片模糊处理",@"未知",@"未知",@"未知",@"未知",@"未知",@"未知"];
+        _itemArrays = @[@"加载动画",@"水纹动画",@"学习动画",@"图片模糊处理",@"POP动画",@"弹簧效果",@"缓动函数动画",@"未知",@"未知",@"未知"];
     }
     return _itemArrays;
 }
@@ -78,6 +83,15 @@
     }else if (indexPath.row == 3){
         ImageHandleVC *imagVC = [[ImageHandleVC alloc] init];
         [self.navigationController pushViewController:imagVC animated:YES];
+    }else if (indexPath.row == 4){
+        POPViewController *popVC = [[POPViewController alloc] init];
+        [self.navigationController pushViewController:popVC animated:YES];
+    }else if (indexPath.row == 5){
+        POPSpringAnimationVC *springVC = [[POPSpringAnimationVC alloc] init];
+        [self.navigationController pushViewController:springVC animated:YES];
+    }else if (indexPath.row == 6){
+        EasingAnimationVC *easingVC = [[EasingAnimationVC alloc] init];
+        [self.navigationController pushViewController:easingVC animated:YES];
     }
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
