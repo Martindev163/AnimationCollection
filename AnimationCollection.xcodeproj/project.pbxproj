@@ -28,6 +28,13 @@
 		237271841DDC617500BF521E /* AnimationCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 237271831DDC617500BF521E /* AnimationCollectionTests.m */; };
 		2372718F1DDC617500BF521E /* AnimationCollectionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2372718E1DDC617500BF521E /* AnimationCollectionUITests.m */; };
 		2372719F1DDC61D600BF521E /* CircleLoadingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2372719E1DDC61D600BF521E /* CircleLoadingAnimation.m */; };
+		238651311E8CA0DD00973667 /* CAEmitterLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 238651301E8CA0DD00973667 /* CAEmitterLayerVC.m */; };
+		238651341E8CAE4600973667 /* CAEmitterLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238651331E8CAE4600973667 /* CAEmitterLayerView.m */; };
+		238651371E8CD22A00973667 /* SnowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238651361E8CD22A00973667 /* SnowView.m */; };
+		2386513A1E8CD23800973667 /* RunView.m in Sources */ = {isa = PBXBuildFile; fileRef = 238651391E8CD23800973667 /* RunView.m */; };
+		2386513E1E8CD84000973667 /* runIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2386513B1E8CD84000973667 /* runIcon.png */; };
+		2386513F1E8CD84000973667 /* snowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2386513C1E8CD84000973667 /* snowIcon.png */; };
+		238651401E8CD84000973667 /* maskImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2386513D1E8CD84000973667 /* maskImg.png */; };
 		23893DCF1E82194F0075AA38 /* BlurDownloadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DCE1E82194F0075AA38 /* BlurDownloadView.m */; };
 		23893DDA1E8227630075AA38 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DD31E8227630075AA38 /* GCDGroup.m */; };
 		23893DDB1E8227630075AA38 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DD51E8227630075AA38 /* GCDQueue.m */; };
@@ -120,6 +127,17 @@
 		2372719D1DDC61D600BF521E /* CircleLoadingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleLoadingAnimation.h; sourceTree = "<group>"; };
 		2372719E1DDC61D600BF521E /* CircleLoadingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleLoadingAnimation.m; sourceTree = "<group>"; };
 		237271A11DDC626800BF521E /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		2386512F1E8CA0DD00973667 /* CAEmitterLayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayerVC.h; sourceTree = "<group>"; };
+		238651301E8CA0DD00973667 /* CAEmitterLayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAEmitterLayerVC.m; sourceTree = "<group>"; };
+		238651321E8CAE4600973667 /* CAEmitterLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayerView.h; sourceTree = "<group>"; };
+		238651331E8CAE4600973667 /* CAEmitterLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAEmitterLayerView.m; sourceTree = "<group>"; };
+		238651351E8CD22A00973667 /* SnowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowView.h; sourceTree = "<group>"; };
+		238651361E8CD22A00973667 /* SnowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowView.m; sourceTree = "<group>"; };
+		238651381E8CD23800973667 /* RunView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunView.h; sourceTree = "<group>"; };
+		238651391E8CD23800973667 /* RunView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunView.m; sourceTree = "<group>"; };
+		2386513B1E8CD84000973667 /* runIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runIcon.png; sourceTree = "<group>"; };
+		2386513C1E8CD84000973667 /* snowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowIcon.png; sourceTree = "<group>"; };
+		2386513D1E8CD84000973667 /* maskImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maskImg.png; sourceTree = "<group>"; };
 		23893DCD1E82194F0075AA38 /* BlurDownloadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurDownloadView.h; sourceTree = "<group>"; };
 		23893DCE1E82194F0075AA38 /* BlurDownloadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurDownloadView.m; sourceTree = "<group>"; };
 		23893DD11E8227630075AA38 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
@@ -320,6 +338,7 @@
 				234023E41E7FC4D80052A07E /* 图片处理 */,
 				239F9AED1E88FCEA006FD4E9 /* pop动画引擎的简单使用 */,
 				236FBA891E8A666900B69EFE /* 缓动函数动画 */,
+				2386512E1E8CA0AA00973667 /* CAEmitterLayer粒子效果 */,
 				2372716F1DDC617500BF521E /* ViewController.h */,
 				237271701DDC617500BF521E /* ViewController.m */,
 				237271691DDC617500BF521E /* Supporting Files */,
@@ -374,6 +393,24 @@
 				2372717A1DDC617500BF521E /* Info.plist */,
 			);
 			name = other;
+			sourceTree = "<group>";
+		};
+		2386512E1E8CA0AA00973667 /* CAEmitterLayer粒子效果 */ = {
+			isa = PBXGroup;
+			children = (
+				2386513B1E8CD84000973667 /* runIcon.png */,
+				2386513C1E8CD84000973667 /* snowIcon.png */,
+				2386513D1E8CD84000973667 /* maskImg.png */,
+				2386512F1E8CA0DD00973667 /* CAEmitterLayerVC.h */,
+				238651301E8CA0DD00973667 /* CAEmitterLayerVC.m */,
+				238651321E8CAE4600973667 /* CAEmitterLayerView.h */,
+				238651331E8CAE4600973667 /* CAEmitterLayerView.m */,
+				238651351E8CD22A00973667 /* SnowView.h */,
+				238651361E8CD22A00973667 /* SnowView.m */,
+				238651381E8CD23800973667 /* RunView.h */,
+				238651391E8CD23800973667 /* RunView.m */,
+			);
+			name = "CAEmitterLayer粒子效果";
 			sourceTree = "<group>";
 		};
 		23893DD01E8227630075AA38 /* GCD */ = {
@@ -591,11 +628,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				239F9AD91E88FB28006FD4E9 /* pop-tvos-Info.plist in Resources */,
+				2386513E1E8CD84000973667 /* runIcon.png in Resources */,
 				239F9AD71E88FB28006FD4E9 /* pop-ios-Info.plist in Resources */,
+				238651401E8CD84000973667 /* maskImg.png in Resources */,
 				237271791DDC617500BF521E /* LaunchScreen.storyboard in Resources */,
 				237271761DDC617500BF521E /* Assets.xcassets in Resources */,
 				237271741DDC617500BF521E /* Main.storyboard in Resources */,
 				239F9AD81E88FB28006FD4E9 /* pop-osx-Info.plist in Resources */,
+				2386513F1E8CD84000973667 /* snowIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +660,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238651371E8CD22A00973667 /* SnowView.m in Sources */,
 				23893DDA1E8227630075AA38 /* GCDGroup.m in Sources */,
 				239F9AE91E88FB28006FD4E9 /* POPSpringAnimation.mm in Sources */,
 				23893DDB1E8227630075AA38 /* GCDQueue.m in Sources */,
@@ -639,6 +680,7 @@
 				2372719F1DDC61D600BF521E /* CircleLoadingAnimation.m in Sources */,
 				239F9AE41E88FB28006FD4E9 /* POPDecayAnimation.mm in Sources */,
 				236FBA881E8A665200B69EFE /* YXEasing.m in Sources */,
+				238651311E8CA0DD00973667 /* CAEmitterLayerVC.m in Sources */,
 				239F9AE51E88FB28006FD4E9 /* POPGeometry.mm in Sources */,
 				239F9AE11E88FB28006FD4E9 /* POPBasicAnimation.mm in Sources */,
 				234023DD1E7F80050052A07E /* CircleView.m in Sources */,
@@ -646,6 +688,7 @@
 				239F9AE81E88FB28006FD4E9 /* POPPropertyAnimation.mm in Sources */,
 				23DAF1BD1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m in Sources */,
 				239F9ADA1E88FB28006FD4E9 /* POPAnimatableProperty.mm in Sources */,
+				2386513A1E8CD23800973667 /* RunView.m in Sources */,
 				236FBA871E8A665200B69EFE /* easing.c in Sources */,
 				234023E71E7FC5180052A07E /* ImageHandleVC.m in Sources */,
 				239F9AF01E88FD12006FD4E9 /* POPViewController.m in Sources */,
@@ -660,6 +703,7 @@
 				239F9AE61E88FB28006FD4E9 /* POPLayerExtras.mm in Sources */,
 				234023E31E7F8A3C0052A07E /* SourceView.m in Sources */,
 				23893DDC1E8227630075AA38 /* GCDSemaphore.m in Sources */,
+				238651341E8CAE4600973667 /* CAEmitterLayerView.m in Sources */,
 				239F9AE71E88FB28006FD4E9 /* POPMath.mm in Sources */,
 				239F9AE21E88FB28006FD4E9 /* POPCGUtils.mm in Sources */,
 			);

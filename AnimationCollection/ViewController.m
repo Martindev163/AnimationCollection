@@ -14,6 +14,7 @@
 #import "POPViewController.h"
 #import "POPSpringAnimationVC.h"
 #import "EasingAnimationVC.h"
+#import "CAEmitterLayerVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -42,7 +43,7 @@
 {
     if (_itemArrays == nil) {
         _itemArrays = [[NSArray alloc] init];
-        _itemArrays = @[@"加载动画",@"水纹动画",@"学习动画",@"图片模糊处理",@"POP动画",@"弹簧效果",@"缓动函数动画",@"未知",@"未知",@"未知"];
+        _itemArrays = @[@"加载动画",@"水纹动画",@"学习动画",@"图片模糊处理",@"POP动画",@"弹簧效果",@"缓动函数动画",@"粒子效果",@"未知",@"未知"];
     }
     return _itemArrays;
 }
@@ -92,6 +93,9 @@
     }else if (indexPath.row == 6){
         EasingAnimationVC *easingVC = [[EasingAnimationVC alloc] init];
         [self.navigationController pushViewController:easingVC animated:YES];
+    }else if (indexPath.row == 7){
+        CAEmitterLayerVC *emitterVC = [[CAEmitterLayerVC alloc] init];
+        [self.navigationController pushViewController:emitterVC animated:YES];
     }
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
