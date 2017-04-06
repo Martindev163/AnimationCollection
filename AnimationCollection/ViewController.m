@@ -15,6 +15,8 @@
 #import "POPSpringAnimationVC.h"
 #import "EasingAnimationVC.h"
 #import "CAEmitterLayerVC.h"
+#import "MaskVC.h"
+#import "ProgressClassVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -43,7 +45,7 @@
 {
     if (_itemArrays == nil) {
         _itemArrays = [[NSArray alloc] init];
-        _itemArrays = @[@"加载动画",@"水纹动画",@"学习动画",@"图片模糊处理",@"POP动画",@"弹簧效果",@"缓动函数动画",@"粒子效果",@"未知",@"未知"];
+        _itemArrays = @[@"加载动画",@"水纹动画",@"学习动画",@"图片模糊处理",@"POP动画",@"弹簧效果",@"缓动函数动画",@"粒子效果",@"遮罩",@"未知"];
     }
     return _itemArrays;
 }
@@ -96,6 +98,12 @@
     }else if (indexPath.row == 7){
         CAEmitterLayerVC *emitterVC = [[CAEmitterLayerVC alloc] init];
         [self.navigationController pushViewController:emitterVC animated:YES];
+    }else if (indexPath.row == 8){
+        MaskVC *maskVC = [[MaskVC alloc] init];
+        [self.navigationController pushViewController:maskVC animated:YES];
+    }else if (indexPath.row == 9){
+        ProgressClassVC *progress = [[ProgressClassVC alloc] init];
+        [self.navigationController pushViewController:progress animated:YES];
     }
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
