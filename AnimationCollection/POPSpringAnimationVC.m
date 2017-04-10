@@ -52,6 +52,7 @@
                                                                         150,
                                                                         100,
                                                                         100)];
+    
     //添加动画
     [self.popView pop_addAnimation:springAni forKey:nil];
 }

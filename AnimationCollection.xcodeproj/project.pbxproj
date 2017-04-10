@@ -67,6 +67,9 @@
 		23B683821E94E90900D9DDA2 /* UIView+help.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B683811E94E90900D9DDA2 /* UIView+help.m */; };
 		23CADC591E8F4C2900C6034A /* MaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CADC581E8F4C2900C6034A /* MaskVC.m */; };
 		23DAF1BD1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DAF1BC1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m */; };
+		23F5C7C11E9B22930025FD83 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F5C7C01E9B22930025FD83 /* BaseViewController.m */; };
+		23F5C7C51E9B2A510025FD83 /* WarnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F5C7C41E9B2A510025FD83 /* WarnViewController.m */; };
+		23F5C80A1E9B5FFD0025FD83 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F5C8091E9B5FFD0025FD83 /* ProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +222,12 @@
 		23CADC581E8F4C2900C6034A /* MaskVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskVC.m; sourceTree = "<group>"; };
 		23DAF1BB1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterRippleLoadingAnimation.h; sourceTree = "<group>"; };
 		23DAF1BC1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterRippleLoadingAnimation.m; sourceTree = "<group>"; };
+		23F5C7BF1E9B22930025FD83 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		23F5C7C01E9B22930025FD83 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		23F5C7C31E9B2A510025FD83 /* WarnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarnViewController.h; sourceTree = "<group>"; };
+		23F5C7C41E9B2A510025FD83 /* WarnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarnViewController.m; sourceTree = "<group>"; };
+		23F5C8081E9B5FFD0025FD83 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		23F5C8091E9B5FFD0025FD83 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +360,7 @@
 				2386512E1E8CA0AA00973667 /* CAEmitterLayer粒子效果 */,
 				23CADC5A1E8F4C2F00C6034A /* 遮罩图层 */,
 				23B683741E94E11900D9DDA2 /* 进度类动画 */,
+				23F5C7C21E9B22DF0025FD83 /* 弹框动画 */,
 				2372716F1DDC617500BF521E /* ViewController.h */,
 				237271701DDC617500BF521E /* ViewController.m */,
 				237271691DDC617500BF521E /* Supporting Files */,
@@ -527,6 +537,8 @@
 			children = (
 				23B683751E94E14500D9DDA2 /* ProgressClassVC.h */,
 				23B683761E94E14500D9DDA2 /* ProgressClassVC.m */,
+				23F5C8081E9B5FFD0025FD83 /* ProgressView.h */,
+				23F5C8091E9B5FFD0025FD83 /* ProgressView.m */,
 			);
 			name = "进度类动画";
 			sourceTree = "<group>";
@@ -536,6 +548,8 @@
 			children = (
 				23B683801E94E90900D9DDA2 /* UIView+help.h */,
 				23B683811E94E90900D9DDA2 /* UIView+help.m */,
+				23F5C7BF1E9B22930025FD83 /* BaseViewController.h */,
+				23F5C7C01E9B22930025FD83 /* BaseViewController.m */,
 			);
 			name = help;
 			sourceTree = "<group>";
@@ -558,6 +572,15 @@
 				23AA67691DFF91BF0035B604 /* WaveView.m */,
 			);
 			name = WaterRippleLoadingAnimation;
+			sourceTree = "<group>";
+		};
+		23F5C7C21E9B22DF0025FD83 /* 弹框动画 */ = {
+			isa = PBXGroup;
+			children = (
+				23F5C7C31E9B2A510025FD83 /* WarnViewController.h */,
+				23F5C7C41E9B2A510025FD83 /* WarnViewController.m */,
+			);
+			name = "弹框动画";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -710,6 +733,7 @@
 				23893DDD1E8227630075AA38 /* GCDTimer.m in Sources */,
 				234023E01E7F80710052A07E /* PercentView.m in Sources */,
 				236FBA8C1E8A66C600B69EFE /* EasingAnimationVC.m in Sources */,
+				23F5C7C11E9B22930025FD83 /* BaseViewController.m in Sources */,
 				239F9ADF1E88FB28006FD4E9 /* POPAnimationTracer.mm in Sources */,
 				23893DCF1E82194F0075AA38 /* BlurDownloadView.m in Sources */,
 				234023D71E7F7F860052A07E /* BaseAntimationView.m in Sources */,
@@ -723,6 +747,7 @@
 				239F9AE41E88FB28006FD4E9 /* POPDecayAnimation.mm in Sources */,
 				236FBA881E8A665200B69EFE /* YXEasing.m in Sources */,
 				238651311E8CA0DD00973667 /* CAEmitterLayerVC.m in Sources */,
+				23F5C80A1E9B5FFD0025FD83 /* ProgressView.m in Sources */,
 				239F9AE51E88FB28006FD4E9 /* POPGeometry.mm in Sources */,
 				239F9AE11E88FB28006FD4E9 /* POPBasicAnimation.mm in Sources */,
 				234023DD1E7F80050052A07E /* CircleView.m in Sources */,
@@ -731,6 +756,7 @@
 				23DAF1BD1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m in Sources */,
 				239F9ADA1E88FB28006FD4E9 /* POPAnimatableProperty.mm in Sources */,
 				2386513A1E8CD23800973667 /* RunView.m in Sources */,
+				23F5C7C51E9B2A510025FD83 /* WarnViewController.m in Sources */,
 				236FBA871E8A665200B69EFE /* easing.c in Sources */,
 				234023E71E7FC5180052A07E /* ImageHandleVC.m in Sources */,
 				239F9AF01E88FD12006FD4E9 /* POPViewController.m in Sources */,

@@ -10,13 +10,10 @@
 
 @interface MaskVC ()<UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) UIImageView *maskLayer;
-
-
 @property (nonatomic, strong) UIImageView *imageV;
 
+@property (nonatomic, strong) CALayer *moveMask;
 
-@property (nonatomic, strong) CALayer *mask;
 @end
 
 @implementation MaskVC
@@ -31,42 +28,37 @@
     _imageV.userInteractionEnabled = YES;
     [self.view addSubview:_imageV];
     
-    self.maskLayer = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-//    self.maskLayer.image = [UIImage imageNamed:@"maskImg"];
-    self.maskLayer.backgroundColor = [UIColor clearColor];
-    self.maskLayer.userInteractionEnabled = YES;
+    
+    //形成遮罩
+    UIImage *image     = [UIImage imageNamed:@"maskImg"];
+    _moveMask          = [CALayer layer];
+    _moveMask.frame    = (CGRect){CGPointZero, image.size};
+    _moveMask.contents = (__bridge id)(image.CGImage);
+    _moveMask.position = self.view.center;
+    _imageV.layer.mask = _moveMask;
+    
+    
+    //拖拽的view
+    UIView *drageView = [[UIView alloc]initWithFrame:(CGRect){CGPointZero, image.size}];
+    drageView.center = self.view.center;
+    [self.view addSubview:drageView];
+    
+    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panEvent:)];
     pan.delegate = self;
-    [self.maskLayer addGestureRecognizer:pan];
-    
-    [self.view addSubview:_maskLayer];
-    
-    
-    _mask = [CALayer layer];
-    
-    _mask.frame = CGRectMake(0, 0, 100, 100);
-    
-    _mask.contents = (__bridge id)[UIImage imageNamed:@"maskImg"].CGImage;
-    
-    _imageV.layer.mask = _mask;
+    [drageView addGestureRecognizer:pan];
     
 }
 
--(void)panEvent:(UIPanGestureRecognizer *)pan{
+-(void)panEvent:(UIPanGestureRecognizer *)recognizer{
+    // 拖拽
+    CGPoint translation    = [recognizer translationInView:self.view];
+    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
+                                         recognizer.view.center.y + translation.y);
+    [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
     
-    CGPoint point = [pan translationInView:self.maskLayer];
-    
-    CGFloat x = pan.view.center.x + point.x;
-    CGFloat y = pan.view.center.y + point.y;
-    
-    NSLog(@"%@",[NSValue valueWithCGPoint:point]);
-
-//    pan.view.frame = CGRectMake(pan.view.center.x + point.x ,pan.view.center.y + point.y, 100, 100);
-    
-    pan.view.center =  CGPointMake(x, y);
-    
-    _mask.frame = CGRectMake(x-50, y-50, 100, 100);
-    
-    [pan setTranslation:CGPointMake(0, 0) inView:self.view];
+    // 关闭CoreAnimation实时动画绘制(核心)
+    [CATransaction setDisableActions:YES];
+    _moveMask.position = recognizer.view.center;
 }
 @end
