@@ -9,6 +9,8 @@
 #import "ProgressView.h"
 #import "UIView+help.h"
 #import "POP.h"
+#import "PopNumberAnimation.h"
+#import "GCD.h"
 
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)  // 角度转弧度
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))    // 弧度转角度
@@ -16,11 +18,19 @@
 #define PROGREESS_WIDTH 210 //直径
 #define PROGREESS_LINE_WIDTH 18 //弧线宽度
 
-@interface ProgressView ()
+#define ANIMATIONTIME 2.f
+
+@interface ProgressView ()<POPNumberAnimationDelegate>
 
 @property (nonatomic, strong) CAShapeLayer *bgLayer;
 
 @property (nonatomic, strong) CAShapeLayer *frontLayer;
+
+@property (nonatomic, strong) UILabel *numberLabel;
+
+@property (nonatomic, strong) PopNumberAnimation *numAnimation;
+
+@property (nonatomic, strong) GCDTimer *timer;
 
 @end
 
@@ -32,6 +42,8 @@
     
     if (self) {
         [self loadProgressView];
+        
+        [self loadNumLabel];
     }
     
     return self;
@@ -84,21 +96,80 @@
     [self.layer addSublayer:gradientLayer];
 }
 
+-(void)loadNumLabel
+{
+    UILabel *kmLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (self.height - 80)/2.0 - 20, self.width, 20)];
+    kmLabel.font = [UIFont systemFontOfSize:18];
+    kmLabel.text = @"km/h";
+    kmLabel.textAlignment = NSTextAlignmentCenter;
+    kmLabel.textColor = [UIColor colorWithRed:115/255.0 green:128/255.0 blue:176/255.0 alpha:1.0];
+    [self addSubview:kmLabel];
+    
+    _numberLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (self.height - 80)/2.0, self.width, 80)];
+    _numberLabel.textAlignment = NSTextAlignmentCenter;
+    _numberLabel.font = [UIFont systemFontOfSize:70];
+    _numberLabel.textColor = [UIColor whiteColor];
+    _numberLabel.text = @"0";
+    [self addSubview:_numberLabel];
+    
+    
+}
+
+
+//配置动画属性
+-(void)configNumberAnimation{
+    self.numAnimation.fromValue = self.numAnimation.currentValue;
+    self.numAnimation.toValue   = self.persent;
+    self.numAnimation.duration  = ANIMATIONTIME;
+//    self.numAnimation.timingFunction = [CAMediaTimingFunction functionWithControlPoints:0.69 :0.11 :0.32 :0.88];
+    self.numAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    [self.numAnimation saveValues];
+}
+
+//numberAnimation 代理方法
+-(void)POPNumberAnimationWithCurrentValue:(CGFloat)currentValue animation:(PopNumberAnimation *)popAnimation{
+    
+    NSString *numStr = [NSString stringWithFormat:@"%.0f",currentValue];
+    
+    _numberLabel.text = numStr;
+    
+    if (currentValue == self.persent) {
+        [self.timer destroy];
+    }
+}
+
+//设置百分比
 -(void)setPersent:(CGFloat)persent
 {
     [CATransaction begin];
     [CATransaction setDisableActions:NO];
     [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
-    [CATransaction setAnimationDuration:1.0];
+    [CATransaction setAnimationDuration:ANIMATIONTIME];
     
     _frontLayer.strokeEnd = persent/100.0;
     [CATransaction commit];
     
     _persent = persent;
     [self loadLineAnimation];
+    
+    
+    
+    self.numAnimation = [[PopNumberAnimation alloc] init];
+    self.numAnimation.delegate = self;
+    
+    __weak ProgressView *weakSelf = self;
+    
+    self.timer = [[GCDTimer alloc] initInQueue:[GCDQueue mainQueue]];
+    [self.timer event:^{
+        [weakSelf configNumberAnimation];
+        [weakSelf.numAnimation startAnimation];
+    } timeIntervalWithSecs:ANIMATIONTIME + 0.1];
+    [self.timer start];
 }
 
-//添加变现动画
+
+
+//添加边线动画
 -(void)loadLineAnimation
 {
     //创建运动的轨迹动画

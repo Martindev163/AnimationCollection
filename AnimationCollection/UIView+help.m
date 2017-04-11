@@ -97,5 +97,22 @@
     return self.center.y;
 }
 
+-(CGFloat)right
+{
+    return self.frame.origin.x + self.frame.size.width;
+}
+-(CGFloat)left
+{
+    return self.frame.origin.x;
+}
+-(CGFloat)top
+{
+    return self.frame.origin.y;
+}
+-(CGFloat)bottom
+{
+    return self.frame.origin.y + self.frame.size.height;
+}
+
 
 @end

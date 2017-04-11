@@ -40,6 +40,7 @@
 		23893DDB1E8227630075AA38 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DD51E8227630075AA38 /* GCDQueue.m */; };
 		23893DDC1E8227630075AA38 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DD71E8227630075AA38 /* GCDSemaphore.m */; };
 		23893DDD1E8227630075AA38 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DD91E8227630075AA38 /* GCDTimer.m */; };
+		239F87801E9C7B4100A2A4B2 /* PopNumberAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 239F877F1E9C7B4100A2A4B2 /* PopNumberAnimation.m */; };
 		239F9AD71E88FB28006FD4E9 /* pop-ios-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 239F9AA01E88FB28006FD4E9 /* pop-ios-Info.plist */; };
 		239F9AD81E88FB28006FD4E9 /* pop-osx-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 239F9AA11E88FB28006FD4E9 /* pop-osx-Info.plist */; };
 		239F9AD91E88FB28006FD4E9 /* pop-tvos-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 239F9AA21E88FB28006FD4E9 /* pop-tvos-Info.plist */; };
@@ -155,6 +156,8 @@
 		23893DD71E8227630075AA38 /* GCDSemaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSemaphore.m; sourceTree = "<group>"; };
 		23893DD81E8227630075AA38 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
 		23893DD91E8227630075AA38 /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
+		239F877E1E9C7B4100A2A4B2 /* PopNumberAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopNumberAnimation.h; sourceTree = "<group>"; };
+		239F877F1E9C7B4100A2A4B2 /* PopNumberAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopNumberAnimation.m; sourceTree = "<group>"; };
 		239F9A9F1E88FB28006FD4E9 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		239F9AA01E88FB28006FD4E9 /* pop-ios-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "pop-ios-Info.plist"; sourceTree = "<group>"; };
 		239F9AA11E88FB28006FD4E9 /* pop-osx-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "pop-osx-Info.plist"; sourceTree = "<group>"; };
@@ -539,6 +542,8 @@
 				23B683761E94E14500D9DDA2 /* ProgressClassVC.m */,
 				23F5C8081E9B5FFD0025FD83 /* ProgressView.h */,
 				23F5C8091E9B5FFD0025FD83 /* ProgressView.m */,
+				239F877E1E9C7B4100A2A4B2 /* PopNumberAnimation.h */,
+				239F877F1E9C7B4100A2A4B2 /* PopNumberAnimation.m */,
 			);
 			name = "进度类动画";
 			sourceTree = "<group>";
@@ -773,6 +778,7 @@
 				23893DDC1E8227630075AA38 /* GCDSemaphore.m in Sources */,
 				238651341E8CAE4600973667 /* CAEmitterLayerView.m in Sources */,
 				239F9AE71E88FB28006FD4E9 /* POPMath.mm in Sources */,
+				239F87801E9C7B4100A2A4B2 /* PopNumberAnimation.m in Sources */,
 				239F9AE21E88FB28006FD4E9 /* POPCGUtils.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
