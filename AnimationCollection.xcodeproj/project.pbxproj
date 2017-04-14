@@ -40,6 +40,7 @@
 		23893DDB1E8227630075AA38 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DD51E8227630075AA38 /* GCDQueue.m */; };
 		23893DDC1E8227630075AA38 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DD71E8227630075AA38 /* GCDSemaphore.m */; };
 		23893DDD1E8227630075AA38 /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 23893DD91E8227630075AA38 /* GCDTimer.m */; };
+		2398EC3F1E9DD831008F8787 /* LoadingAniView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398EC3E1E9DD831008F8787 /* LoadingAniView.m */; };
 		239F87801E9C7B4100A2A4B2 /* PopNumberAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 239F877F1E9C7B4100A2A4B2 /* PopNumberAnimation.m */; };
 		239F9AD71E88FB28006FD4E9 /* pop-ios-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 239F9AA01E88FB28006FD4E9 /* pop-ios-Info.plist */; };
 		239F9AD81E88FB28006FD4E9 /* pop-osx-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 239F9AA11E88FB28006FD4E9 /* pop-osx-Info.plist */; };
@@ -156,6 +157,8 @@
 		23893DD71E8227630075AA38 /* GCDSemaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSemaphore.m; sourceTree = "<group>"; };
 		23893DD81E8227630075AA38 /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
 		23893DD91E8227630075AA38 /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
+		2398EC3D1E9DD831008F8787 /* LoadingAniView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingAniView.h; sourceTree = "<group>"; };
+		2398EC3E1E9DD831008F8787 /* LoadingAniView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingAniView.m; sourceTree = "<group>"; };
 		239F877E1E9C7B4100A2A4B2 /* PopNumberAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopNumberAnimation.h; sourceTree = "<group>"; };
 		239F877F1E9C7B4100A2A4B2 /* PopNumberAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopNumberAnimation.m; sourceTree = "<group>"; };
 		239F9A9F1E88FB28006FD4E9 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -402,6 +405,8 @@
 			children = (
 				2372719D1DDC61D600BF521E /* CircleLoadingAnimation.h */,
 				2372719E1DDC61D600BF521E /* CircleLoadingAnimation.m */,
+				2398EC3D1E9DD831008F8787 /* LoadingAniView.h */,
+				2398EC3E1E9DD831008F8787 /* LoadingAniView.m */,
 			);
 			name = CircleLodingAnimation;
 			sourceTree = "<group>";
@@ -757,6 +762,7 @@
 				239F9AE11E88FB28006FD4E9 /* POPBasicAnimation.mm in Sources */,
 				234023DD1E7F80050052A07E /* CircleView.m in Sources */,
 				236FBA811E8A56AC00B69EFE /* POPSpringAnimationVC.m in Sources */,
+				2398EC3F1E9DD831008F8787 /* LoadingAniView.m in Sources */,
 				239F9AE81E88FB28006FD4E9 /* POPPropertyAnimation.mm in Sources */,
 				23DAF1BD1DFE75CF000BBF47 /* WaterRippleLoadingAnimation.m in Sources */,
 				239F9ADA1E88FB28006FD4E9 /* POPAnimatableProperty.mm in Sources */,

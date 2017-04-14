@@ -7,11 +7,12 @@
 //
 
 #import "CircleLoadingAnimation.h"
+#import "LoadingAniView.h"
 
 #define ShapelayerLineWidth 5
 #define ShapelayerWidth 100
 #define ShapelayerMargin (kDeviceWidth - ShapelayerWidth)/2.0
-#define ShapelayerY (kDeviceHeight - ShapelayerWidth)/3.0
+#define ShapelayerY 50
 #define ShapelayerRadius ShapelayerWidth/2.0
 #define AnimationDuration 2
 
@@ -29,6 +30,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self createCircle];
     [self addLoadingAnimation];
+    
+    LoadingAniView *loadView = [[LoadingAniView alloc] initWithFrame:CGRectMake(100, 250, 120, 180)];//宽高比为1:1.5
+    
+    loadView.backgroundColor = [UIColor purpleColor];
+    
+    [self.view addSubview:loadView];
 }
 
 #pragma mark - 画圈
