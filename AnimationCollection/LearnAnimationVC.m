@@ -9,6 +9,7 @@
 #import "LearnAnimationVC.h"
 #import "BaseAntimationView.h"
 #import "YXEasing.h"
+#import "UIView+help.h"
 
 @interface LearnAnimationVC ()
 
@@ -44,6 +45,10 @@
     _label.backgroundColor = [UIColor redColor];
     _label.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:_label];
+    
+    
+    [self loacZoomAnimation];
+    
 }
 
 //创建抖动动画
@@ -71,6 +76,31 @@
 -(void)hideBaseView
 {
     [_baseView hideAniamtionWithDurition:1 animation:YES];
+}
+
+-(void)loacZoomAnimation{
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 50, 50)];
+    btn.backgroundColor = [UIColor redColor];
+    btn.layer.cornerRadius = 25;
+    btn.layer.masksToBounds = YES;
+    [self.view addSubview:btn];
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+    animation.keyPath = @"transform.scale";
+    animation.values = @[@(1),@(0.5),@(1)];
+    [btn.layer addAnimation:animation forKey:nil];
+    
+    CAKeyframeAnimation *opacityanimation = [CAKeyframeAnimation animation];
+    opacityanimation.keyPath = @"opacity";
+    opacityanimation.values = @[@(0.5),@(1),@(0.5)];
+    [btn.layer addAnimation:opacityanimation forKey:nil];
+    
+    CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
+    animationGroup.animations = @[animation,opacityanimation];
+    animationGroup.duration = 2.f;
+    animationGroup.repeatCount = CGFLOAT_MAX;
+    [btn.layer addAnimation:animationGroup forKey:nil];
+    
 }
 
 @end

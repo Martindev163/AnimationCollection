@@ -21,6 +21,8 @@
 @property (nonatomic, strong) CAShapeLayer *bgShapLayer;
 @property (nonatomic, strong) CAShapeLayer *colorShapeLayer;
 
+//@property (nonatomic, weak) LoadingAniView *loadView;
+
 @end
 
 @implementation CircleLoadingAnimation
@@ -31,12 +33,36 @@
     [self createCircle];
     [self addLoadingAnimation];
     
-    LoadingAniView *loadView = [[LoadingAniView alloc] initWithFrame:CGRectMake(100, 250, 120, 180)];//宽高比为1:1.5
+    UIButton *succeedBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, kDeviceHeight - 100, 100, 44)];
+    succeedBtn.backgroundColor = [UIColor redColor];
+    [succeedBtn setTitle:@"成功" forState:UIControlStateNormal];
+    [succeedBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    succeedBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [succeedBtn addTarget:self action:@selector(succeedAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:succeedBtn];
     
-    loadView.backgroundColor = [UIColor purpleColor];
+    UIButton *failBtn = [[UIButton alloc] initWithFrame:CGRectMake(kDeviceWidth - 120, kDeviceHeight - 100, 100, 44)];
+    failBtn.backgroundColor = [UIColor redColor];
+    [failBtn setTitle:@"失败" forState:UIControlStateNormal];
+    [failBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    failBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [failBtn addTarget:self action:@selector(failAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:failBtn];
+}
+
+-(void)succeedAction{
+//    [_loadView removeFromSuperview];
+    LoadingAniView *loadView = [[LoadingAniView alloc] initWithFrame:CGRectMake((kDeviceWidth - 120)/2.f, 250, 120, 180) WithIsSucceed:YES];//宽高比为1:1.5
     
     [self.view addSubview:loadView];
 }
+
+-(void)failAction{
+    LoadingAniView *loadView = [[LoadingAniView alloc] initWithFrame:CGRectMake((kDeviceWidth - 120)/2.f, 250, 120, 180) WithIsSucceed:NO];//宽高比为1:1.5
+    
+    [self.view addSubview:loadView];
+}
+
 
 #pragma mark - 画圈
 -(void)createCircle

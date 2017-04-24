@@ -10,4 +10,6 @@
 
 @interface LoadingAniView : UIView
 
+-(instancetype)initWithFrame:(CGRect)frame WithIsSucceed:(BOOL)succeed;
+
 @end
