@@ -38,6 +38,7 @@
     _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight - 64)];
     _tableview.delegate = self;
     _tableview.dataSource = self;
+    _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableview];
 }
 
@@ -69,6 +70,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     cell.textLabel.text = _itemArrays[indexPath.row];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 43.5, kDeviceWidth, 0.5)];
+    lineView.backgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.f];
+    [cell.contentView addSubview:lineView];
     return cell;
 }
 
