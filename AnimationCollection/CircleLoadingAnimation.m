@@ -17,6 +17,9 @@
 #define AnimationDuration 2
 
 @interface CircleLoadingAnimation ()
+{
+    LoadingAniView *_loadView;
+}
 
 @property (nonatomic, strong) CAShapeLayer *bgShapLayer;
 @property (nonatomic, strong) CAShapeLayer *colorShapeLayer;
@@ -51,16 +54,19 @@
 }
 
 -(void)succeedAction{
-//    [_loadView removeFromSuperview];
-    LoadingAniView *loadView = [[LoadingAniView alloc] initWithFrame:CGRectMake((kDeviceWidth - 120)/2.f, 250, 120, 180) WithIsSucceed:YES];//宽高比为1:1.5
+    [_loadView removeFromSuperview];
+    _loadView = nil;
+    _loadView = [[LoadingAniView alloc] initWithFrame:CGRectMake((kDeviceWidth - 120)/2.f, 250, 120, 180) WithIsSucceed:YES];//宽高比为1:1.5
     
-    [self.view addSubview:loadView];
+    [self.view addSubview:_loadView];
 }
 
 -(void)failAction{
-    LoadingAniView *loadView = [[LoadingAniView alloc] initWithFrame:CGRectMake((kDeviceWidth - 120)/2.f, 250, 120, 180) WithIsSucceed:NO];//宽高比为1:1.5
+    [_loadView removeFromSuperview];
+    _loadView = nil;
+    _loadView = [[LoadingAniView alloc] initWithFrame:CGRectMake((kDeviceWidth - 120)/2.f, 250, 120, 180) WithIsSucceed:NO];//宽高比为1:1.5
     
-    [self.view addSubview:loadView];
+    [self.view addSubview:_loadView];
 }
 
 

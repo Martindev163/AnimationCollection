@@ -8,6 +8,7 @@
 
 #import "LoadingAniView.h"
 #import "UIView+help.h"
+#import "YXEasing.h"
 
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)  // 角度转弧度
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))    // 弧度转角度
@@ -191,7 +192,7 @@
     
     CAAnimationGroup *aniGroup = [CAAnimationGroup animation];
     aniGroup.animations = @[startAni,strokeEndAnimation];
-    aniGroup.duration = 1;
+    aniGroup.duration = 0.8;
     aniGroup.repeatCount = 1;
     aniGroup.fillMode = kCAFillModeForwards;
     aniGroup.removedOnCompletion = NO;
@@ -202,11 +203,11 @@
     rotationAni.fromValue = [NSNumber numberWithFloat:M_PI *2];
     rotationAni.toValue   = [NSNumber numberWithFloat:0];
     rotationAni.removedOnCompletion = YES;
-    rotationAni.duration = 1;
+    rotationAni.duration = 0.8;
     rotationAni.repeatCount = 1;
     [_circleLayer addAnimation:rotationAni forKey:nil];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self loadFlyAnimation];
     });
 }
@@ -215,13 +216,15 @@
 -(void)loadFlyAnimation
 {
     _flyLayer.hidden = NO;
-    CABasicAnimation *startAni = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-    startAni.fromValue = @(0.97);
-    startAni.toValue =@(0.75);
+    CAKeyframeAnimation *startAni = [CAKeyframeAnimation animationWithKeyPath:@"strokeStart"];
+//    startAni.fromValue = @(0.97);
+//    startAni.toValue =@(0.75);
+    startAni.values = [YXEasing calculateFrameFromValue:0.97 toValue:0.75 func:QuadraticEaseOut frameCount:30*0.5];
     
-    CABasicAnimation *strokeEndAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    strokeEndAnimation.fromValue = @(1);
-    strokeEndAnimation.toValue = @(0.77);
+    CAKeyframeAnimation *strokeEndAnimation = [CAKeyframeAnimation animationWithKeyPath:@"strokeEnd"];
+//    strokeEndAnimation.fromValue = @(1);
+//    strokeEndAnimation.toValue = @(0.77);
+    strokeEndAnimation.values = [YXEasing calculateFrameFromValue:1 toValue:0.77 func:QuadraticEaseOut frameCount:30*0.5];
     
     CAAnimationGroup *aniGroup = [CAAnimationGroup animation];
     aniGroup.animations = @[startAni,strokeEndAnimation];
@@ -246,7 +249,11 @@
 ///设置向下插入的动画
 -(void)loadDropAnimation
 {
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
     _flyLayer.hidden = YES;
+    [CATransaction commit];
+    
     CABasicAnimation *startAni = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
     startAni.fromValue = @(0);
     startAni.toValue =@(0.4);
@@ -257,14 +264,14 @@
     
     CAAnimationGroup *aniGroup = [CAAnimationGroup animation];
     aniGroup.animations = @[startAni,strokeEndAnimation];
-    aniGroup.duration = 0.3;
+    aniGroup.duration = 0.1;
     aniGroup.repeatCount = 1;
     aniGroup.fillMode = kCAFillModeForwards;
     aniGroup.removedOnCompletion = NO;
     
     [_dropLayer addAnimation:aniGroup forKey:nil];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self loadShapeChangeGather];
     });
 }
@@ -283,7 +290,7 @@
     
     CAAnimationGroup *aniGroup = [CAAnimationGroup animation];
     aniGroup.animations = @[startAni,strokeEndAnimation];
-    aniGroup.duration = 0.2;
+    aniGroup.duration = 0.1;
     aniGroup.repeatCount = 1;
     aniGroup.fillMode = kCAFillModeForwards;
     aniGroup.removedOnCompletion = NO;
@@ -295,7 +302,7 @@
     pathAni.keyPath = @"transform.scale.y";
     pathAni.fromValue = [NSNumber numberWithFloat:1.f];
     pathAni.toValue   = [NSNumber numberWithFloat:0.9f];
-    pathAni.duration = .2f;
+    pathAni.duration = .1f;
     pathAni.removedOnCompletion = NO;
     pathAni.fillMode = kCAFillModeForwards;
     [_circleLayer addAnimation:pathAni forKey:nil];
@@ -324,14 +331,14 @@
     
     CAAnimationGroup *aniGroup2 = [CAAnimationGroup animation];
     aniGroup2.animations = @[thickStartAni,thickEndAnimation];
-    aniGroup2.duration = 0.2;
+    aniGroup2.duration = 0.1;
     aniGroup2.repeatCount = 1;
     aniGroup2.fillMode = kCAFillModeForwards;
     aniGroup2.removedOnCompletion = NO;
     
     [_thickLayer addAnimation:aniGroup2 forKey:nil];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self loadRecoverAnimation];
     });
     
@@ -488,7 +495,7 @@
     CAKeyframeAnimation * keyAnimaion = [CAKeyframeAnimation animation];
     keyAnimaion.keyPath = @"transform.rotation";
     keyAnimaion.values = @[@(-10 / 180.0 * M_PI),@(10 /180.0 * M_PI),@(-10/ 180.0 * M_PI)];//度数转弧度
-    keyAnimaion.duration = 0.2;
+    keyAnimaion.duration = 0.15;
     keyAnimaion.repeatCount = 3;
     
     [_exclamationSuperLayer addAnimation:keyAnimaion forKey:nil];
