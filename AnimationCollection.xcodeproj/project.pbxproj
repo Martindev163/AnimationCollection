@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E9685DD90FBAA8B21D5367D /* libPods-AnimationCollection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC90BC16E3E58C720FE8AAFE /* libPods-AnimationCollection.a */; };
 		233ADCD91E80FCB800FA194A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 233ADCD81E80FCB800FA194A /* UIImage+ImageEffects.m */; };
 		234023D41E7F7E2E0052A07E /* LearnAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 234023D31E7F7E2E0052A07E /* LearnAnimationVC.m */; };
 		234023D71E7F7F860052A07E /* BaseAntimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 234023D61E7F7F860052A07E /* BaseAntimationView.m */; };
@@ -15,6 +16,8 @@
 		234023E01E7F80710052A07E /* PercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 234023DF1E7F80710052A07E /* PercentView.m */; };
 		234023E31E7F8A3C0052A07E /* SourceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 234023E21E7F8A3C0052A07E /* SourceView.m */; };
 		234023E71E7FC5180052A07E /* ImageHandleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 234023E61E7FC5180052A07E /* ImageHandleVC.m */; };
+		2360E60524347FED0035C9AA /* MHZPOPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2360E60224347FEC0035C9AA /* MHZPOPAlertView.m */; };
+		2360E60624347FED0035C9AA /* PopAlertViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2360E60424347FED0035C9AA /* PopAlertViewVC.m */; };
 		236FBA811E8A56AC00B69EFE /* POPSpringAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 236FBA801E8A56AC00B69EFE /* POPSpringAnimationVC.m */; };
 		236FBA871E8A665200B69EFE /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 236FBA831E8A665200B69EFE /* easing.c */; };
 		236FBA881E8A665200B69EFE /* YXEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = 236FBA861E8A665200B69EFE /* YXEasing.m */; };
@@ -98,6 +101,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070440AE912419C3496E8988 /* Pods-AnimationCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationCollection.release.xcconfig"; path = "Target Support Files/Pods-AnimationCollection/Pods-AnimationCollection.release.xcconfig"; sourceTree = "<group>"; };
+		1C8EEB3CED57FE19A36D601B /* Pods-AnimationCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationCollection.debug.xcconfig"; path = "Target Support Files/Pods-AnimationCollection/Pods-AnimationCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		233ADCD71E80FCB800FA194A /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		233ADCD81E80FCB800FA194A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		234023D21E7F7E2E0052A07E /* LearnAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnAnimationVC.h; sourceTree = "<group>"; };
@@ -114,6 +119,10 @@
 		234023E21E7F8A3C0052A07E /* SourceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceView.m; sourceTree = "<group>"; };
 		234023E51E7FC5180052A07E /* ImageHandleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHandleVC.h; sourceTree = "<group>"; };
 		234023E61E7FC5180052A07E /* ImageHandleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHandleVC.m; sourceTree = "<group>"; };
+		2360E60124347FEC0035C9AA /* MHZPOPAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHZPOPAlertView.h; sourceTree = "<group>"; };
+		2360E60224347FEC0035C9AA /* MHZPOPAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHZPOPAlertView.m; sourceTree = "<group>"; };
+		2360E60324347FEC0035C9AA /* PopAlertViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAlertViewVC.h; sourceTree = "<group>"; };
+		2360E60424347FED0035C9AA /* PopAlertViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAlertViewVC.m; sourceTree = "<group>"; };
 		236FBA7F1E8A56AC00B69EFE /* POPSpringAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPSpringAnimationVC.h; sourceTree = "<group>"; };
 		236FBA801E8A56AC00B69EFE /* POPSpringAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POPSpringAnimationVC.m; sourceTree = "<group>"; };
 		236FBA831E8A665200B69EFE /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
@@ -252,6 +261,7 @@
 		23F5C7C41E9B2A510025FD83 /* WarnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarnViewController.m; sourceTree = "<group>"; };
 		23F5C8081E9B5FFD0025FD83 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 		23F5C8091E9B5FFD0025FD83 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		AC90BC16E3E58C720FE8AAFE /* libPods-AnimationCollection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnimationCollection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E9685DD90FBAA8B21D5367D /* libPods-AnimationCollection.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +340,17 @@
 			name = "图片处理";
 			sourceTree = "<group>";
 		};
+		2360E60024347F960035C9AA /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				2360E60124347FEC0035C9AA /* MHZPOPAlertView.h */,
+				2360E60224347FEC0035C9AA /* MHZPOPAlertView.m */,
+				2360E60324347FEC0035C9AA /* PopAlertViewVC.h */,
+				2360E60424347FED0035C9AA /* PopAlertViewVC.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
 		236FBA821E8A662F00B69EFE /* 缓动函数 */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +378,8 @@
 				237271821DDC617500BF521E /* AnimationCollectionTests */,
 				2372718D1DDC617500BF521E /* AnimationCollectionUITests */,
 				237271671DDC617500BF521E /* Products */,
+				B531F30DE4D9699EEE0C7FA9 /* Pods */,
+				78C0B716AD547332EDEC98D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -372,6 +396,7 @@
 		237271681DDC617500BF521E /* AnimationCollection */ = {
 			isa = PBXGroup;
 			children = (
+				2360E60024347F960035C9AA /* AlertView */,
 				23B683781E94E76900D9DDA2 /* help */,
 				233ADCD51E80FC9300FA194A /* 工具 */,
 				237271A01DDC623500BF521E /* other */,
@@ -631,6 +656,24 @@
 			path = "弹框动画";
 			sourceTree = "<group>";
 		};
+		78C0B716AD547332EDEC98D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC90BC16E3E58C720FE8AAFE /* libPods-AnimationCollection.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B531F30DE4D9699EEE0C7FA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C8EEB3CED57FE19A36D601B /* Pods-AnimationCollection.debug.xcconfig */,
+				070440AE912419C3496E8988 /* Pods-AnimationCollection.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -638,6 +681,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 237271931DDC617500BF521E /* Build configuration list for PBXNativeTarget "AnimationCollection" */;
 			buildPhases = (
+				B59978EE1E493EA3D569F4D1 /* [CP] Check Pods Manifest.lock */,
 				237271621DDC617500BF521E /* Sources */,
 				237271631DDC617500BF521E /* Frameworks */,
 				237271641DDC617500BF521E /* Resources */,
@@ -766,6 +810,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B59978EE1E493EA3D569F4D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnimationCollection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		237271621DDC617500BF521E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -797,6 +866,7 @@
 				23EEEA491ECC270200CA02AA /* FontInfomation.m in Sources */,
 				2372716B1DDC617500BF521E /* main.m in Sources */,
 				2372719F1DDC61D600BF521E /* CircleLoadingAnimation.m in Sources */,
+				2360E60624347FED0035C9AA /* PopAlertViewVC.m in Sources */,
 				239F9AE41E88FB28006FD4E9 /* POPDecayAnimation.mm in Sources */,
 				236FBA881E8A665200B69EFE /* YXEasing.m in Sources */,
 				238651311E8CA0DD00973667 /* CAEmitterLayerVC.m in Sources */,
@@ -823,6 +893,7 @@
 				239F9ADD1E88FB28006FD4E9 /* POPAnimationExtras.mm in Sources */,
 				239F9ADC1E88FB28006FD4E9 /* POPAnimationEvent.mm in Sources */,
 				234023D41E7F7E2E0052A07E /* LearnAnimationVC.m in Sources */,
+				2360E60524347FED0035C9AA /* MHZPOPAlertView.m in Sources */,
 				239F9ADB1E88FB28006FD4E9 /* POPAnimation.mm in Sources */,
 				239F9AE61E88FB28006FD4E9 /* POPLayerExtras.mm in Sources */,
 				234023E31E7F8A3C0052A07E /* SourceView.m in Sources */,
@@ -977,6 +1048,7 @@
 		};
 		237271941DDC617500BF521E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C8EEB3CED57FE19A36D601B /* Pods-AnimationCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AnimationCollection/Header.h";
@@ -990,6 +1062,7 @@
 		};
 		237271951DDC617500BF521E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 070440AE912419C3496E8988 /* Pods-AnimationCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AnimationCollection/Header.h";

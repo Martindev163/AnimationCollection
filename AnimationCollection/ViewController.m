@@ -18,6 +18,7 @@
 #import "MaskVC.h"
 #import "ProgressClassVC.h"
 #import "SystemFontController.h"
+#import "PopAlertViewVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -47,7 +48,7 @@
 {
     if (_itemArrays == nil) {
         _itemArrays = [[NSArray alloc] init];
-        _itemArrays = @[@"加载动画",@"水纹动画",@"学习动画",@"图片模糊处理",@"POP动画",@"弹簧效果",@"缓动函数动画",@"粒子效果",@"遮罩",@"模拟表盘页面",@"系统字体"];
+        _itemArrays = @[@"加载动画",@"水纹动画",@"学习动画",@"图片模糊处理",@"POP动画",@"弹簧效果",@"缓动函数动画",@"粒子效果",@"遮罩",@"模拟表盘页面",@"系统字体",@"AlertView"];
     }
     return _itemArrays;
 }
@@ -112,6 +113,9 @@
     }else if (indexPath.row == 10){
         SystemFontController *fontVC = [[SystemFontController alloc] init];
         [self.navigationController pushViewController:fontVC animated:YES];
+    }else if (indexPath.row == 11){
+        PopAlertViewVC *alertVC = [[PopAlertViewVC alloc] init];
+        [self.navigationController pushViewController:alertVC animated:YES];
     }
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
