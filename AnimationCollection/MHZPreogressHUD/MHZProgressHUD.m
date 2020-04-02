@@ -151,6 +151,8 @@
             }
         }
         indicator.color = [UIColor whiteColor];
+        
+        hud.label.textColor = [UIColor whiteColor];
     }
     
     if (delay > -1) {

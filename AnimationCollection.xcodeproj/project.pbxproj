@@ -410,9 +410,6 @@
 			children = (
 				2360E607243485690035C9AA /* MHZPreogressHUD */,
 				2360E60024347F960035C9AA /* AlertView */,
-				23B683781E94E76900D9DDA2 /* help */,
-				233ADCD51E80FC9300FA194A /* 工具 */,
-				237271A01DDC623500BF521E /* other */,
 				2372719C1DDC619300BF521E /* CircleLodingAnimation */,
 				23DAF1BA1DFE7557000BBF47 /* WaterRippleLoadingAnimation */,
 				234023D11E7F7DD10052A07E /* 动画设计学习 */,
@@ -426,6 +423,9 @@
 				23EEEA401ECBF95E00CA02AA /* 系统字体 */,
 				2372716F1DDC617500BF521E /* ViewController.h */,
 				237271701DDC617500BF521E /* ViewController.m */,
+				23B683781E94E76900D9DDA2 /* help */,
+				233ADCD51E80FC9300FA194A /* 工具 */,
+				237271A01DDC623500BF521E /* other */,
 				237271691DDC617500BF521E /* Supporting Files */,
 			);
 			path = AnimationCollection;
@@ -697,6 +697,7 @@
 				237271621DDC617500BF521E /* Sources */,
 				237271631DDC617500BF521E /* Frameworks */,
 				237271641DDC617500BF521E /* Resources */,
+				7E495BC101247F9C0A922AE2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -823,6 +824,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7E495BC101247F9C0A922AE2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnimationCollection/Pods-AnimationCollection-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnimationCollection/Pods-AnimationCollection-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B59978EE1E493EA3D569F4D1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

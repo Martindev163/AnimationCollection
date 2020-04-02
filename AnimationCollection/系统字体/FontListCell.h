@@ -16,8 +16,6 @@
 
 - (void)setupCell;
 
-- (void)buildSubview;
-
 //加载内容，通过subclass重写
 -(void)loadContent;
 

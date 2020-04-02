@@ -5,4 +5,5 @@ target 'AnimationCollection' do
   
  pod 'Masonry'	
  pod 'MBProgressHUD', '~> 1.2.0'
+ pod 'MJRefresh'
 end

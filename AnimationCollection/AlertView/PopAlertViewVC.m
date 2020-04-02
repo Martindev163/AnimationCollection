@@ -120,12 +120,8 @@
             });
         }
         else if (index == 3) {
-            [MHZProgressHUD showLoadingAddToView:self.navigationController.view];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [MHZProgressHUD hideHUDForView:self.navigationController.view];
-            });
-        }
-        else if (index == 4) {
+//            [MHZProgressHUD showMessage_LightToView:self.navigationController.view message:@"但愿人长久千里共婵娟" afterDelay:2.5f];
+            [MHZProgressHUD showMessageToView:self.navigationController.view message:@"但愿人长久千里共婵娟" afterDelay:2.5f];
             
         }
     } cancelButtenTitle:@"取消" otherButtonTitle:@"第一个",@"第二个",@"第三个",@"第四个",nil];
