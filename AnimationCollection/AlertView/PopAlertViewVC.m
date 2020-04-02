@@ -105,6 +105,28 @@
         NSLog(@"我点了第 %li 个",(long)index+1);
         if (index == 0) {
             [MHZProgressHUD showHUDAddTo:self.navigationController.view WithImages:@[@"lite_loading_1",@"lite_loading_2",@"lite_loading_3",@"lite_loading_4",@"lite_loading_5",@"lite_loading_6",@"lite_loading_7",@"lite_loading_8",@"lite_loading_9",@"lite_loading_10",@"lite_loading_11",@"lite_loading_12",@"lite_loading_13",@"lite_loading_14",@"lite_loading_15",@"lite_loading_16",@"lite_loading_17",@"lite_loading_18",@"lite_loading_19",@"lite_loading_20",@"lite_loading_21",@"lite_loading_22",@"lite_loading_23",@"lite_loading_24"]];
+        }else if (index == 1) {
+            [MHZProgressHUD showLoading];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MHZProgressHUD hideHUDForWindow];
+            });
+        }
+        else if (index == 2) {
+            [MHZProgressHUD showLoading_Light];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MHZProgressHUD hideHUDForWindow];
+            });
+        }
+        else if (index == 3) {
+            [MHZProgressHUD showLoadingAddToView:self.navigationController.view];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MHZProgressHUD hideHUDForView:self.navigationController.view];
+            });
+        }
+        else if (index == 4) {
+            
         }
     } cancelButtenTitle:@"取消" otherButtonTitle:@"第一个",@"第二个",@"第三个",@"第四个",nil];
     

@@ -23,6 +23,83 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)showHUDAddTo:(UIView *)view WithImages:(NSArray<NSString *> *)imgs;
 
 
+/// 从window上移除HUD
++(void)hideHUDForWindow;
+
+
+/// 隐藏HUD
+/// @param view 被移除HUD的view
++(void)hideHUDForView:(UIView *)view;
+
+
+/// 菊花Loading (默认添加在window上)
++(void)showLoading;
+
+
+/// 显示loading 并在指定时间后隐藏
+/// @param delay 延迟时间
++(void)showLoadingHideAfterDelay:(NSTimeInterval)delay;
+
+
+/// 菊花Loading
+/// @param view 需要添加HUD到的view上
++(void)showLoadingAddToView:(UIView *)view;
+
+
+/// 显示loading 并在指定时间后隐藏
+/// @param delay 延迟时间
++(void)showLoadingAddToView:(UIView *)view HideAfterDelay:(NSTimeInterval)delay;
+
+
+/// 菊花Loading (默认添加在window上)
++(void)showLoading_Light;
+
+
+/// 菊花Loading
+/// @param view 需要添加HUD到的view上
++(void)showLoading_LightAddToView:(UIView *)view;
+
+
+/// 文本tost
+/// @param message 显示的内容
++(void)showMessage:(NSString *)message;
+
+
+/// 文本tost
+/// @param view 需要添加HUD的View
+/// @param message 显示的内容
++(void)showMessageToView:(UIView *)view message:(NSString *)message;
+
+
+/// 文本tost
+/// @param view 需要添加HUD的View
+/// @param message 显示的内容
+/// @param delay 延迟消失
++(void)showMessageToView:(UIView *)view message:(NSString *)message afterDelay:(NSTimeInterval)delay;
+
+
+/// 文本tost
+/// @param message 显示的内容
++(void)showMessage_Light:(NSString *)message;
+
+
+/// 文本tost
+/// @param message 显示的内容
+/// @param delay 延迟消失
++(void)showMessage_Light:(NSString *)message afterDelay:(NSTimeInterval)delay;
+
+
+/// 文本tost
+/// @param view 需要添加HUD的View
+/// @param message 显示的内容
++(void)showMessage_LightToView:(UIView *)view message:(NSString *)message;
+
+
+/// 文本tost
+/// @param view 需要添加HUD的View
+/// @param message 显示的内容
+/// @param delay 延迟消失
++(void)showMessage_LightToView:(UIView *)view message:(NSString *)message afterDelay:(NSTimeInterval)delay;
 
 @end
 
