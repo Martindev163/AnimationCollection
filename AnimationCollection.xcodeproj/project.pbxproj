@@ -18,6 +18,7 @@
 		234023E71E7FC5180052A07E /* ImageHandleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 234023E61E7FC5180052A07E /* ImageHandleVC.m */; };
 		2360E60524347FED0035C9AA /* MHZPOPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2360E60224347FEC0035C9AA /* MHZPOPAlertView.m */; };
 		2360E60624347FED0035C9AA /* PopAlertViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2360E60424347FED0035C9AA /* PopAlertViewVC.m */; };
+		2360E60A24348CAB0035C9AA /* MHZProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2360E60924348CAB0035C9AA /* MHZProgressHUD.m */; };
 		236FBA811E8A56AC00B69EFE /* POPSpringAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 236FBA801E8A56AC00B69EFE /* POPSpringAnimationVC.m */; };
 		236FBA871E8A665200B69EFE /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 236FBA831E8A665200B69EFE /* easing.c */; };
 		236FBA881E8A665200B69EFE /* YXEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = 236FBA861E8A665200B69EFE /* YXEasing.m */; };
@@ -123,6 +124,8 @@
 		2360E60224347FEC0035C9AA /* MHZPOPAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHZPOPAlertView.m; sourceTree = "<group>"; };
 		2360E60324347FEC0035C9AA /* PopAlertViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAlertViewVC.h; sourceTree = "<group>"; };
 		2360E60424347FED0035C9AA /* PopAlertViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAlertViewVC.m; sourceTree = "<group>"; };
+		2360E60824348CAB0035C9AA /* MHZProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHZProgressHUD.h; sourceTree = "<group>"; };
+		2360E60924348CAB0035C9AA /* MHZProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHZProgressHUD.m; sourceTree = "<group>"; };
 		236FBA7F1E8A56AC00B69EFE /* POPSpringAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPSpringAnimationVC.h; sourceTree = "<group>"; };
 		236FBA801E8A56AC00B69EFE /* POPSpringAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POPSpringAnimationVC.m; sourceTree = "<group>"; };
 		236FBA831E8A665200B69EFE /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
@@ -351,6 +354,15 @@
 			path = AlertView;
 			sourceTree = "<group>";
 		};
+		2360E607243485690035C9AA /* MHZPreogressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2360E60824348CAB0035C9AA /* MHZProgressHUD.h */,
+				2360E60924348CAB0035C9AA /* MHZProgressHUD.m */,
+			);
+			path = MHZPreogressHUD;
+			sourceTree = "<group>";
+		};
 		236FBA821E8A662F00B69EFE /* 缓动函数 */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +408,7 @@
 		237271681DDC617500BF521E /* AnimationCollection */ = {
 			isa = PBXGroup;
 			children = (
+				2360E607243485690035C9AA /* MHZPreogressHUD */,
 				2360E60024347F960035C9AA /* AlertView */,
 				23B683781E94E76900D9DDA2 /* help */,
 				233ADCD51E80FC9300FA194A /* 工具 */,
@@ -670,7 +683,6 @@
 				1C8EEB3CED57FE19A36D601B /* Pods-AnimationCollection.debug.xcconfig */,
 				070440AE912419C3496E8988 /* Pods-AnimationCollection.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -855,6 +867,7 @@
 				236FBA8C1E8A66C600B69EFE /* EasingAnimationVC.m in Sources */,
 				23F5C7C11E9B22930025FD83 /* BaseViewController.m in Sources */,
 				239F9ADF1E88FB28006FD4E9 /* POPAnimationTracer.mm in Sources */,
+				2360E60A24348CAB0035C9AA /* MHZProgressHUD.m in Sources */,
 				23893DCF1E82194F0075AA38 /* BlurDownloadView.m in Sources */,
 				234023D71E7F7F860052A07E /* BaseAntimationView.m in Sources */,
 				239F9ADE1E88FB28006FD4E9 /* POPAnimationRuntime.mm in Sources */,

@@ -9,7 +9,7 @@
 #import "PopAlertViewVC.h"
 #import "MHZPOPAlertView.h"
 #import "Masonry.h"
-
+#import "MHZProgressHUD.h"
 
 @interface PopAlertViewVC ()
 
@@ -103,6 +103,9 @@
         NSLog(@"取消");
     } otherBlock:^(NSInteger index) {
         NSLog(@"我点了第 %li 个",(long)index+1);
+        if (index == 0) {
+            [MHZProgressHUD showHUDAddTo:self.navigationController.view WithImages:@[@"lite_loading_1",@"lite_loading_2",@"lite_loading_3",@"lite_loading_4",@"lite_loading_5",@"lite_loading_6",@"lite_loading_7",@"lite_loading_8",@"lite_loading_9",@"lite_loading_10",@"lite_loading_11",@"lite_loading_12",@"lite_loading_13",@"lite_loading_14",@"lite_loading_15",@"lite_loading_16",@"lite_loading_17",@"lite_loading_18",@"lite_loading_19",@"lite_loading_20",@"lite_loading_21",@"lite_loading_22",@"lite_loading_23",@"lite_loading_24"]];
+        }
     } cancelButtenTitle:@"取消" otherButtonTitle:@"第一个",@"第二个",@"第三个",@"第四个",nil];
     
     alertView.animationType = SpringCenterBouncinesType;
