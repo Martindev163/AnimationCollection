@@ -19,6 +19,8 @@
 #import "ProgressClassVC.h"
 #import "SystemFontController.h"
 #import "PopAlertViewVC.h"
+#import "MJRefresh.h"
+#import "MHZAnimationHeader.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -41,6 +43,7 @@
     _tableview.delegate = self;
     _tableview.dataSource = self;
     _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableview.mj_header = [MHZAnimationHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self.view addSubview:_tableview];
 }
 
@@ -122,6 +125,12 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-
+//MARK: 交互事件
+-(void)loadNewData{
+    MJWeakSelf;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf.tableview.mj_header endRefreshing];
+    });
+}
 
 @end

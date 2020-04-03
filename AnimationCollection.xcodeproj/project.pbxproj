@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E9685DD90FBAA8B21D5367D /* libPods-AnimationCollection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC90BC16E3E58C720FE8AAFE /* libPods-AnimationCollection.a */; };
+		2306E4F42435DD800067A272 /* MHZAnimationHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2306E4F32435DD800067A272 /* MHZAnimationHeader.m */; };
+		2306E4F72435ED3E0067A272 /* MHZNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2306E4F62435ED3E0067A272 /* MHZNormalHeader.m */; };
 		233ADCD91E80FCB800FA194A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 233ADCD81E80FCB800FA194A /* UIImage+ImageEffects.m */; };
 		234023D41E7F7E2E0052A07E /* LearnAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 234023D31E7F7E2E0052A07E /* LearnAnimationVC.m */; };
 		234023D71E7F7F860052A07E /* BaseAntimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 234023D61E7F7F860052A07E /* BaseAntimationView.m */; };
@@ -104,6 +106,10 @@
 /* Begin PBXFileReference section */
 		070440AE912419C3496E8988 /* Pods-AnimationCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationCollection.release.xcconfig"; path = "Target Support Files/Pods-AnimationCollection/Pods-AnimationCollection.release.xcconfig"; sourceTree = "<group>"; };
 		1C8EEB3CED57FE19A36D601B /* Pods-AnimationCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationCollection.debug.xcconfig"; path = "Target Support Files/Pods-AnimationCollection/Pods-AnimationCollection.debug.xcconfig"; sourceTree = "<group>"; };
+		2306E4F22435DD800067A272 /* MHZAnimationHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHZAnimationHeader.h; sourceTree = "<group>"; };
+		2306E4F32435DD800067A272 /* MHZAnimationHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHZAnimationHeader.m; sourceTree = "<group>"; };
+		2306E4F52435ED3E0067A272 /* MHZNormalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHZNormalHeader.h; sourceTree = "<group>"; };
+		2306E4F62435ED3E0067A272 /* MHZNormalHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHZNormalHeader.m; sourceTree = "<group>"; };
 		233ADCD71E80FCB800FA194A /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		233ADCD81E80FCB800FA194A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		234023D21E7F7E2E0052A07E /* LearnAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnAnimationVC.h; sourceTree = "<group>"; };
@@ -293,6 +299,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2306E4F12435DCC60067A272 /* MHZDIYHeaderRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				2306E4F22435DD800067A272 /* MHZAnimationHeader.h */,
+				2306E4F32435DD800067A272 /* MHZAnimationHeader.m */,
+				2306E4F52435ED3E0067A272 /* MHZNormalHeader.h */,
+				2306E4F62435ED3E0067A272 /* MHZNormalHeader.m */,
+			);
+			path = MHZDIYHeaderRefresh;
+			sourceTree = "<group>";
+		};
 		233ADCD51E80FC9300FA194A /* 工具 */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +425,7 @@
 		237271681DDC617500BF521E /* AnimationCollection */ = {
 			isa = PBXGroup;
 			children = (
+				2306E4F12435DCC60067A272 /* MHZDIYHeaderRefresh */,
 				2360E607243485690035C9AA /* MHZPreogressHUD */,
 				2360E60024347F960035C9AA /* AlertView */,
 				2372719C1DDC619300BF521E /* CircleLodingAnimation */,
@@ -878,6 +896,7 @@
 				237271711DDC617500BF521E /* ViewController.m in Sources */,
 				234023DA1E7F7FD20052A07E /* TranslationAnimationView.m in Sources */,
 				23EEEA461ECC26E400CA02AA /* FontInfoModel.m in Sources */,
+				2306E4F42435DD800067A272 /* MHZAnimationHeader.m in Sources */,
 				23EEEA4F1ECC27B200CA02AA /* CustomHeaderFooterView.m in Sources */,
 				23CADC591E8F4C2900C6034A /* MaskVC.m in Sources */,
 				233ADCD91E80FCB800FA194A /* UIImage+ImageEffects.m in Sources */,
@@ -899,6 +918,7 @@
 				2372716B1DDC617500BF521E /* main.m in Sources */,
 				2372719F1DDC61D600BF521E /* CircleLoadingAnimation.m in Sources */,
 				2360E60624347FED0035C9AA /* PopAlertViewVC.m in Sources */,
+				2306E4F72435ED3E0067A272 /* MHZNormalHeader.m in Sources */,
 				239F9AE41E88FB28006FD4E9 /* POPDecayAnimation.mm in Sources */,
 				236FBA881E8A665200B69EFE /* YXEasing.m in Sources */,
 				238651311E8CA0DD00973667 /* CAEmitterLayerVC.m in Sources */,
