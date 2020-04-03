@@ -21,6 +21,7 @@
 #import "PopAlertViewVC.h"
 #import "MJRefresh.h"
 #import "MHZAnimationHeader.h"
+#import "MHZNormalHeader.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -44,6 +45,8 @@
     _tableview.dataSource = self;
     _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableview.mj_header = [MHZAnimationHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+//    _tableview.mj_header = [MHZNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    
     [self.view addSubview:_tableview];
 }
 

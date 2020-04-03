@@ -27,21 +27,25 @@
     self.mj_h = 50;
     
     //添加label
-    
+    UILabel *label = [[UILabel alloc] init];
+    label.textColor = [UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1.f];
+    label.font = [UIFont boldSystemFontOfSize:14];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:label];
+    self.label = label;
     
     //添加loading
-    
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self addSubview:loading];
+    self.loading = loading;
 }
 
-
--(void)endRefreshing{
-    self.label.text = @"刷新完成";
-}
 
 //MARK: 在这里设置子控件的位置和尺寸
 -(void)placeSubviews{
     [super placeSubviews];
-    
+    self.label.frame = self.bounds;
+    self.loading.center = CGPointMake(self.mj_w/2 - 60, self.mj_h * 0.5);
 }
 
 
@@ -67,19 +71,21 @@
         case MJRefreshStateIdle:
         {
             //提示下拉
-            self.label.text = @"下拉刷新";
+            [self.loading stopAnimating];
+            self.label.text = @"下拉可以刷新";
         }
             break;
         case MJRefreshStatePulling:
         {
             //提示放开
-            self.label.text = @"松手刷新";
+            self.label.text = @"释放立即刷新";
         }
             break;
         case MJRefreshStateRefreshing:
         {
             //放开后的提示
-            self.label.text = @"正在刷新";
+            self.label.text = @"正在刷新...";
+            [self.loading startAnimating];
         }
             break;
         default:

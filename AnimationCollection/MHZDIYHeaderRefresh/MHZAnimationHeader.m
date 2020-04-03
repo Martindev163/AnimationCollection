@@ -13,7 +13,7 @@
 @property (nonatomic, strong) UILabel *label;//文字标签
 @property (nonatomic, strong) UIImageView *imageView;//动画载体
 
-@property (nonatomic, assign) BOOL isEnd;//是否是完成刷新
+//@property (nonatomic, assign) BOOL isEnd;//是否是完成刷新
 
 @end
 
@@ -54,9 +54,7 @@
 //MARK: 刷新结束
 -(void)endRefreshing{
     [super endRefreshing];
-    _isEnd = YES;
 }
-
 
 
 //MARK: 在这里设置子控件的位置和尺寸
@@ -71,12 +69,8 @@
 //MARK: 监听ScrollView的contentOffset改变
 -(void)scrollViewContentOffsetDidChange:(NSDictionary *)change{
     [super scrollViewContentOffsetDidChange:change];
-    
-    if (self.scrollView.contentOffset.y == 0) {
-        NSLog(@"ok");
-        self.label.text = @"下拉刷新";
-    }
 }
+
 
 //MARK: 监听scrollView的contentSize改变
 -(void)scrollViewContentSizeDidChange:(NSDictionary *)change{
@@ -94,15 +88,7 @@
     switch (state) {
         case MJRefreshStateIdle:
         {
-            if (_isEnd) {
-                //加载完成，提示刷新完成
-                self.label.text = @"刷新完成";
-                NSLog(@"1111111");
-            }else{
-                //提示下拉
-                self.label.text = @"下拉刷新";
-                NSLog(@"2222222");
-            }
+            self.label.text = @"下拉刷新";
         }
             break;
         case MJRefreshStatePulling:
@@ -127,12 +113,6 @@
 -(void)setPullingPercent:(CGFloat)pullingPercent{
     [super setPullingPercent:pullingPercent];
     
-//    if (self.isRefreshing == YES) {
-//        _isEnd = NO;
-//    }else{
-//        NSLog(@"%f",pullingPercent);
-//        _isEnd = YES;
-//    }
 }
 
 @end
